@@ -172,7 +172,8 @@ section{padding:7rem 2rem;position:relative}
 .kpi:hover::before{opacity:1}
 .kpi:hover{border-color:rgba(255,255,255,.1);transform:translateY(-4px)}
 .kpi>*{position:relative;z-index:1}
-.kpi-big{font-size:2.4rem;font-weight:900;line-height:1;margin-bottom:.6rem}
+.kpi-big{font-size:2.4rem;font-weight:900;line-height:1;margin-bottom:.6rem;display:inline-flex;align-items:center;gap:.12em;justify-content:center}
+.kpi-arrow{width:.82em;height:.82em;flex-shrink:0;stroke:currentColor;fill:none;stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 2px 8px currentColor);opacity:.95}
 .kpi:nth-child(1) .kpi-big{color:var(--rose)}
 .kpi:nth-child(2) .kpi-big{color:var(--amber)}
 .kpi:nth-child(3) .kpi-big{color:var(--blue)}
@@ -193,6 +194,54 @@ canvas{max-height:250px}
 
 /* ════════ CONCLUSION ════════ */
 .conclusion-card{max-width:800px;margin:0 auto;text-align:center;border-radius:24px;padding:4rem 3rem;position:relative;overflow:hidden;border:1px solid rgba(59,130,246,.1);background:linear-gradient(145deg,rgba(59,130,246,.06),rgba(16,185,129,.03))}
+
+/* ════════ BUDGET ════════ */
+.budget-intro{text-align:center;max-width:720px;margin:0 auto 2.5rem;color:var(--text2);font-size:.92rem;font-weight:300;line-height:1.65}
+.budget-intro strong{color:var(--white);font-weight:500}
+.budget-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;max-width:1150px;margin:0 auto 2.5rem}
+@media(max-width:900px){.budget-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.budget-grid{grid-template-columns:1fr}}
+.budget-item{background:var(--bg2);border-radius:14px;padding:1.4rem 1.3rem;border:1px solid rgba(255,255,255,.04);position:relative;overflow:hidden;transition:all .3s}
+.budget-item::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,currentColor,transparent);opacity:.35}
+.budget-item:hover{border-color:rgba(255,255,255,.1);transform:translateY(-3px)}
+.budget-item:nth-child(1){color:var(--blue)}
+.budget-item:nth-child(2){color:var(--emerald)}
+.budget-item:nth-child(3){color:var(--amber)}
+.budget-item:nth-child(4){color:var(--purple)}
+.budget-item:nth-child(5){color:var(--cyan)}
+.budget-item:nth-child(6){color:var(--pink)}
+.budget-item:nth-child(7){color:var(--rose)}
+.budget-head{display:flex;align-items:center;gap:.7rem;margin-bottom:.8rem}
+.budget-icon{width:36px;height:36px;border-radius:10px;background:currentColor;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;position:relative}
+.budget-icon::before{content:'';position:absolute;inset:0;background:var(--bg2);border-radius:10px;opacity:.85}
+.budget-icon span{position:relative;z-index:1;font-size:1rem;filter:none}
+.budget-item h5{color:var(--white);font-size:.88rem;font-weight:600;line-height:1.25;flex:1}
+.budget-amount{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;font-weight:700;color:currentColor;line-height:1;margin-bottom:.35rem;letter-spacing:-.01em}
+.budget-sub{font-size:.7rem;color:var(--text3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.8rem;font-weight:500}
+.budget-desc{color:var(--text2);font-size:.76rem;line-height:1.55;font-weight:300;padding-top:.7rem;border-top:1px solid rgba(255,255,255,.05)}
+
+.budget-total{max-width:1150px;margin:0 auto 2rem;border-radius:20px;background:linear-gradient(135deg,rgba(59,130,246,.12),rgba(16,185,129,.06));border:1px solid rgba(59,130,246,.2);padding:2rem 2.2rem;display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:1.5rem;position:relative;overflow:hidden}
+.budget-total::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 0% 50%,rgba(59,130,246,.1),transparent 60%);pointer-events:none}
+@media(max-width:800px){.budget-total{grid-template-columns:1fr;text-align:center}}
+.bt-block{position:relative;z-index:1}
+.bt-label{font-size:.68rem;color:var(--text3);text-transform:uppercase;letter-spacing:.1em;font-weight:600;margin-bottom:.4rem}
+.bt-value{font-family:'Space Grotesk',sans-serif;font-size:2.3rem;font-weight:800;line-height:1;color:var(--white);letter-spacing:-.02em}
+.bt-value .bt-unit{font-size:1rem;font-weight:500;color:var(--text2);margin-left:.3rem}
+.bt-desc{font-size:.75rem;color:var(--text2);margin-top:.5rem;font-weight:300;line-height:1.4}
+.bt-block:nth-child(1) .bt-value{color:var(--emerald)}
+.bt-block:nth-child(2) .bt-value{color:var(--blue)}
+.bt-block:nth-child(3) .bt-value{color:var(--amber)}
+
+.budget-roi{max-width:1150px;margin:0 auto;background:var(--bg2);border-radius:16px;padding:1.6rem 2rem;border:1px solid rgba(255,255,255,.04);display:grid;grid-template-columns:auto 1fr;gap:1.5rem;align-items:center}
+@media(max-width:700px){.budget-roi{grid-template-columns:1fr;text-align:center}}
+.roi-badge{background:linear-gradient(135deg,var(--emerald),var(--blue));padding:1.2rem 1.5rem;border-radius:14px;text-align:center;min-width:140px}
+.roi-badge-num{font-family:'Space Grotesk',sans-serif;font-size:2.4rem;font-weight:800;color:var(--white);line-height:1;letter-spacing:-.02em}
+.roi-badge-label{font-size:.65rem;color:rgba(255,255,255,.85);text-transform:uppercase;letter-spacing:.1em;margin-top:.3rem;font-weight:600}
+.roi-text h5{color:var(--white);font-size:.95rem;font-weight:600;margin-bottom:.4rem}
+.roi-text p{color:var(--text2);font-size:.82rem;line-height:1.55;font-weight:300}
+.roi-text strong{color:var(--white);font-weight:500}
+
+
 .conclusion-card::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(59,130,246,.12),transparent 60%)}
 .conclusion-card>*{position:relative;z-index:1}
 .big-quote{font-size:clamp(1.3rem,3vw,2rem);font-weight:700;color:var(--white);line-height:1.35;margin-bottom:2rem;font-style:italic}
@@ -296,6 +345,7 @@ footer{text-align:center;padding:3rem 2rem;color:var(--text3);font-size:.75rem;b
     <a onclick="document.getElementById('plan').scrollIntoView({behavior:'smooth'})">Plan</a>
     <a onclick="document.getElementById('roles').scrollIntoView({behavior:'smooth'})">Roles</a>
     <a onclick="document.getElementById('kpis').scrollIntoView({behavior:'smooth'})">KPIs</a>
+    <a onclick="document.getElementById('presupuesto').scrollIntoView({behavior:'smooth'})">Presupuesto</a>
     <a onclick="document.getElementById('conclusion').scrollIntoView({behavior:'smooth'})">Conclusión</a>
     <a onclick="document.getElementById('fuentes').scrollIntoView({behavior:'smooth'})">Fuentes</a>
   </div>
@@ -507,7 +557,7 @@ footer{text-align:center;padding:3rem 2rem;color:var(--text3);font-size:.75rem;b
   <p class="ssub">Lo que no se mide, no se gestiona — impacto directo a lograr.</p></div>
   <div class="kpi-strip reveal">
     <div class="kpi">
-      <div class="kpi-big">−15%</div>
+      <div class="kpi-big"><svg class="kpi-arrow" viewBox="0 0 24 24"><path d="M12 4v16M5 13l7 7 7-7"/></svg>15%</div>
       <h4>Tasa de Absentismo y Bajas</h4>
       <p>Sector servicios en España ≈7%. Programas de bienestar lo reducen entre 15–25%. Meta conservadora: −15% anual.</p>
       <div class="kpi-source">
@@ -517,7 +567,7 @@ footer{text-align:center;padding:3rem 2rem;color:var(--text3);font-size:.75rem;b
       </div>
     </div>
     <div class="kpi">
-      <div class="kpi-big">−30%</div>
+      <div class="kpi-big"><svg class="kpi-arrow" viewBox="0 0 24 24"><path d="M12 4v16M5 13l7 7 7-7"/></svg>30%</div>
       <h4>Rotación No Deseada</h4>
       <p>La evidencia sitúa la reducción en el rango 25–33% al combinar bienestar, reconocimiento y liderazgo.</p>
       <div class="kpi-source">
@@ -527,7 +577,7 @@ footer{text-align:center;padding:3rem 2rem;color:var(--text3);font-size:.75rem;b
       </div>
     </div>
     <div class="kpi">
-      <div class="kpi-big">+20%</div>
+      <div class="kpi-big"><svg class="kpi-arrow" viewBox="0 0 24 24"><path d="M12 20V4M5 11l7-7 7 7"/></svg>20%</div>
       <h4>Ratio de Engagement (JD-R)</h4>
       <p>Modelo JD-R: vigor, dedicación, absorción, autonomía, conexión, resiliencia. Empresas con programas integrados mejoran 20–27%.</p>
       <div class="kpi-source">
@@ -537,7 +587,7 @@ footer{text-align:center;padding:3rem 2rem;color:var(--text3);font-size:.75rem;b
       </div>
     </div>
     <div class="kpi">
-      <div class="kpi-big">+10%</div>
+      <div class="kpi-big"><svg class="kpi-arrow" viewBox="0 0 24 24"><path d="M12 20V4M5 11l7-7 7 7"/></svg>10%</div>
       <h4>Productividad por FTE</h4>
       <p>Estudios longitudinales (Aetna, Johnson & Johnson) documentan ganancias del 10–12% cuando el bienestar se integra en la cultura.</p>
       <div class="kpi-source">
@@ -552,6 +602,91 @@ footer{text-align:center;padding:3rem 2rem;color:var(--text3);font-size:.75rem;b
     <div class="chart-box"><h4>⚡ Engagement JD-R <span>Radar</span></h4><canvas id="c2"></canvas></div>
     <div class="chart-box"><h4>🔄 Rotación Trimestral <span>2025 vs 2026 (%)</span></h4><canvas id="c3"></canvas></div>
     <div class="chart-box"><h4>📊 Productividad vs Bienestar <span>Scatter</span></h4><canvas id="c4"></canvas></div>
+  </div>
+</div></section>
+
+<div class="sdiv"></div>
+
+<!-- ════════ PRESUPUESTO ════════ -->
+<section id="presupuesto"><div class="container">
+  <div class="reveal"><div class="badge"><span class="dot"></span>Inversión</div>
+  <h2 class="stitle">Presupuesto Estimado</h2>
+  <p class="ssub">Estimación anual para el despliegue del plan en Hays España.</p></div>
+
+  <p class="budget-intro reveal">Dimensionamiento calibrado para <strong>~220 empleados en 6 oficinas</strong>, referenciado a benchmarks del sector (€150–€1.200 por empleado/año según alcance del programa). La propuesta se sitúa en el <strong>rango medio-alto (€700–€750/FTE)</strong>, coherente con una empresa Top 10 del sector consultoría.</p>
+
+  <div class="budget-grid reveal">
+    <div class="budget-item">
+      <div class="budget-head"><div class="budget-icon"><span>🧠</span></div><h5>Plataforma EAP + Salud Mental</h5></div>
+      <div class="budget-amount">21.000 €</div>
+      <div class="budget-sub">~8 €/empleado/mes</div>
+      <div class="budget-desc">Servicio de asistencia psicológica confidencial 24/7, videoconsultas, contenido multilingüe. Proveedor tipo Meditopia, ICAS Spain o Savia (Mapfre).</div>
+    </div>
+    <div class="budget-item">
+      <div class="budget-head"><div class="budget-icon"><span>💪</span></div><h5>Gympass / Wellhub corporativo</h5></div>
+      <div class="budget-amount">33.000 €</div>
+      <div class="budget-sub">~25 €/usuario/mes (50% adopción)</div>
+      <div class="budget-desc">Acceso a red de gimnasios, apps de fitness, mindfulness y nutrición. Pago solo por empleados activos — modelo que Wellhub valida con mejor ROI.</div>
+    </div>
+    <div class="budget-item">
+      <div class="budget-head"><div class="budget-icon"><span>🎓</span></div><h5>Formación y liderazgo saludable</h5></div>
+      <div class="budget-amount">28.000 €</div>
+      <div class="budget-sub">~125 €/empleado/año</div>
+      <div class="budget-desc">Talleres mensuales de gestión del estrés, formación a managers en detección de burnout, programas de resiliencia y soft skills.</div>
+    </div>
+    <div class="budget-item">
+      <div class="budget-head"><div class="budget-icon"><span>🏥</span></div><h5>Salud física y chequeos</h5></div>
+      <div class="budget-amount">22.000 €</div>
+      <div class="budget-sub">~100 €/empleado/año</div>
+      <div class="budget-desc">Revisiones médicas anuales, fisioterapia preventiva (servicio más demandado según Mapfre, 62%), campañas de vacunación y ergonomía.</div>
+    </div>
+    <div class="budget-item">
+      <div class="budget-head"><div class="budget-icon"><span>📊</span></div><h5>Diagnóstico y medición JD-R</h5></div>
+      <div class="budget-amount">15.000 €</div>
+      <div class="budget-sub">Consultoría + 2 pulse surveys</div>
+      <div class="budget-desc">Baseline JD-R inicial, encuestas de engagement bianuales, dashboard de métricas y benchmark sectorial anual.</div>
+    </div>
+    <div class="budget-item">
+      <div class="budget-head"><div class="budget-icon"><span>🎉</span></div><h5>Eventos, cultura y comunicación</h5></div>
+      <div class="budget-amount">12.000 €</div>
+      <div class="budget-sub">6 oficinas · 2 semanas bienestar/año</div>
+      <div class="budget-desc">Semanas temáticas, team-building saludable, comunicación interna, kits de bienvenida. Cobertura territorial en las 6 oficinas.</div>
+    </div>
+    <div class="budget-item">
+      <div class="budget-head"><div class="budget-icon"><span>👤</span></div><h5>Wellbeing Manager (0,5 FTE)</h5></div>
+      <div class="budget-amount">25.000 €</div>
+      <div class="budget-sub">Coordinador interno part-time</div>
+      <div class="budget-desc">Figura referente en RRHH que coordina el plan, mide KPIs y hace seguimiento de proveedores. Clave para que el programa no quede en papel.</div>
+    </div>
+  </div>
+
+  <div class="budget-total reveal">
+    <div class="bt-block">
+      <div class="bt-label">Inversión anual total</div>
+      <div class="bt-value">156.000 <span class="bt-unit">€/año</span></div>
+      <div class="bt-desc">Presupuesto integral, escalable por fases en año 1.</div>
+    </div>
+    <div class="bt-block">
+      <div class="bt-label">Coste por empleado</div>
+      <div class="bt-value">~710 <span class="bt-unit">€/FTE</span></div>
+      <div class="bt-desc">Dentro del rango medio del sector servicios en España.</div>
+    </div>
+    <div class="bt-block">
+      <div class="bt-label">% sobre masa salarial</div>
+      <div class="bt-value">~1,6<span class="bt-unit">%</span></div>
+      <div class="bt-desc">Sobre coste laboral estimado (~9,9 M€ para 220 FTE).</div>
+    </div>
+  </div>
+
+  <div class="budget-roi reveal">
+    <div class="roi-badge">
+      <div class="roi-badge-num">3,2×</div>
+      <div class="roi-badge-label">ROI esperado</div>
+    </div>
+    <div class="roi-text">
+      <h5>Retorno estimado en 12–18 meses</h5>
+      <p>Los ahorros proyectados por reducción de absentismo (~104.000 €/año) y rotación no deseada (~350.000 €/año) superan ampliamente la inversión. Consistente con el ratio <strong>1 € invertido → 3,5 € retornados</strong> documentado por Balance Life Personas Felices y con el ROI <strong>1,47×–3×</strong> reportado por WellSteps (2026) y <strong>3×–6×</strong> por estudios de EAP (Engagedly, 2025).</p>
+    </div>
   </div>
 </div></section>
 
@@ -617,6 +752,17 @@ footer{text-align:center;padding:3rem 2rem;color:var(--text3);font-size:.75rem;b
         <li><a href="https://wellhub.com/en-us/blog/press-releases/study-reveals-strong-return-on-investment-for-corporate-wellness-programs/" target="_blank" rel="noopener"><span class="bsrc-name">Wellhub</span> — Return on Wellbeing Report<span class="bsrc-year">(2024)</span></a></li>
         <li><a href="https://holisticare.io/blog/corporate-wellness-programs/" target="_blank" rel="noopener"><span class="bsrc-name">Aetna / Holisticare</span> — Estudios longitudinales de productividad<span class="bsrc-year">(2023)</span></a></li>
         <li><a href="https://www.joinforma.com/resources/employee-wellness-programs-roi" target="_blank" rel="noopener"><span class="bsrc-name">Forma / Harvard Business Review</span> — Wellness ROI Analysis<span class="bsrc-year">(2024)</span></a></li>
+      </ul>
+    </div>
+
+    <div class="biblio-cat">
+      <h4><span class="bcat-icon">💰</span> Fuentes del presupuesto</h4>
+      <ul class="biblio-list">
+        <li><a href="https://www.hubengage.com/feeds/blog/average-cost-wellness-program-employee" target="_blank" rel="noopener"><span class="bsrc-name">HubEngage</span> — Average Cost of Wellness Programs per Employee<span class="bsrc-year">(2026)</span></a></li>
+        <li><a href="https://www.wellsteps.com/blog/2026/04/14/wellness-program-costs-the-numbers-you-need-to-know/" target="_blank" rel="noopener"><span class="bsrc-name">WellSteps</span> — Wellness Program Costs Breakdown<span class="bsrc-year">(2026)</span></a></li>
+        <li><a href="https://meditopia.com/en/forwork/articles/how-much-does-eap-cost-to-employers" target="_blank" rel="noopener"><span class="bsrc-name">Meditopia for Work</span> — EAP Cost &amp; ROI Analysis<span class="bsrc-year">(2026)</span></a></li>
+        <li><a href="https://www.mapfre.com/comunicacion/negocio-espana-comunicacion/67-empleados-interesado-recibir-servicios-bienestar/" target="_blank" rel="noopener"><span class="bsrc-name">Mapfre / Savia</span> — Estudio bienestar laboral España<span class="bsrc-year">(2025)</span></a></li>
+        <li><a href="https://aebys.com/noticias/cuanto-cuesta-contratar-a-un-empleado-en-espana-en-2025-calculo-y-factores-clave/" target="_blank" rel="noopener"><span class="bsrc-name">AEBYS</span> — Coste real de un empleado en España<span class="bsrc-year">(2025)</span></a></li>
       </ul>
     </div>
 
