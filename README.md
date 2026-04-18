@@ -2,7 +2,7 @@
 
 Proyecto académico que propone un plan integral de bienestar y salud mental para **Hays España** (grupo de Manuel Monjo), basado en el modelo **Job Demands-Resources (JD-R)** de Bakker & Demerouti.
 
-🌐 **Web en vivo:** [mmonjo-commits.github.io/bienestar-salud-mental](https://mmonjo-commits.github.io/bienestar-salud-mental/)
+🌐 **Web en vivo:** [mmonjo-commits.github.io/Manuel-Monjo-Plan-Bienestar-Hays/](https://mmonjo-commits.github.io/Manuel-Monjo-Plan-Bienestar-Hays/)
 
 📱 **Acceso rápido:** código QR en la portada de la web que enlaza directamente al proyecto.
 
